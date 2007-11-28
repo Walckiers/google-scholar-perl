@@ -71,19 +71,13 @@ This document describes My::Google::Scholar version 0.0.3
 
 =head1 SYNOPSIS
 
-use My::Google::Scholar;
 use My::Google::Scholar::Paper
 
-my $scholar = My::Google::Scholar->new( { num => 100,
-					  as_subj => 'eng' });
+my $paper = My::Google::Scholar::Paper->new( $html_chunk); # or
+my $paper = My::Google::Scholar::Paper->new( _title => $titulo );
 
-my @papers = $scholar->search_author( 'Koza, John' ); # Returns My::Google::Scholar::Paper
-
-for my $p (@papers ) {
-  print "Title ", $p->title(), "\n";
-}
-
-my $h = $scholar->h_index( 'Holland, John' );
+print paper->title();
+print paper->cited_by();
   
   
 =head1 DESCRIPTION
@@ -95,11 +89,20 @@ my $h = $scholar->h_index( 'Holland, John' );
 
 =head1 INTERFACE 
 
-=for author to fill in:
-    Write a separate section listing the public components of the modules
-    interface. These normally consist of either subroutines that may be
-    exported, or methods that may be called on objects belonging to the
-    classes provided by the module.
+=head2 new 
+
+my $paper = My::Google::Scholar::Paper->new( $html_chunk); # or
+my $paper = My::Google::Scholar::Paper->new( _title => $titulo );
+
+Creates a new paper data structure
+
+=head2 title
+
+Returns the paper title
+
+=head2 cited_by
+
+Returns the number of citations
 
 
 =head1 DIAGNOSTICS

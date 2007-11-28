@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 
+use Test::Simple tests => 1;
 use strict;
 use warnings;
 
@@ -12,5 +13,5 @@ my $scholar = My::Google::Scholar->new( { num => 100,
 
 my $h_index = $scholar->h_index( 'Koza, John' ); # Returns My::Google::Scholar::Paper
 
-print "H-Index for Koza, John is $h_index\n";
+ok( $h_index >= 33, "Koza's h_index is correct" );
 

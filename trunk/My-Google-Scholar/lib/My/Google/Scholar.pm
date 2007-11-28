@@ -93,9 +93,9 @@ This document describes My::Google::Scholar version 0.0.1
 my $scholar = My::Google::Scholar->new( { num => 100,
 					  as_subj => 'eng' });
 
-my @papers = $scholar->search_author( 'Koza, John' ); # Returns My::Google::Scholar::Paper
+my $papers = $scholar->search_author( 'Koza, John' ); # Returns My::Google::Scholar::Paper
 
-for my $p (@papers ) {
+for my $p (@$papers ) {
   print "Title ", $p->title(), "\n";
 }
 
@@ -104,19 +104,32 @@ my $h = $scholar->h_index( 'Holland, John' );
   
 =head1 DESCRIPTION
 
-=for author to fill in:
-    Write a full description of the module and its features here.
-    Use subsections (=head2, =head3) as appropriate.
+Module for scraping and obtaining results from Google Scholar (L<
+http://scholar.google.com >), mainly geared for obtaining the Hirsch h
+index, but also (hopefully) useful for other stuff.
 
 
 =head1 INTERFACE 
 
-=for author to fill in:
-    Write a separate section listing the public components of the modules
-    interface. These normally consist of either subroutines that may be
-    exported, or methods that may be called on objects belonging to the
-    classes provided by the module.
+=head2 new
 
+
+my $scholar = My::Google::Scholar->new( { num => 100,
+					  as_subj => 'eng' });
+
+C<num> is the number of results returned. num > 100 will yield impredictable results. C<as_subj> is the (possibly undocumented) option to restric the subjects that are going to be searched. 'eng' is for engineering, you're on your own for other subjects. If this option is not set, it will search all subjects. 
+
+=head2 search_author( $author_name )
+
+my $papers = $scholar->search_author( 'Koza, John' ); 
+
+Returns an arrayref of L<My::Google::Scholar::Paper>'s
+
+=head2 h_index( $author_name )
+
+my $h_index = $scholar->search_author( 'Koza, John' );
+
+Return Hirsch's H Index according to Google Scholar. 
 
 =head1 DIAGNOSTICS
 
