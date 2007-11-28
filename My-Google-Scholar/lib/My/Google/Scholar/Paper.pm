@@ -1,16 +1,11 @@
-package My::Google::Scholar;
+package My::Google::Scholar::Paper;
 
 use warnings;
 use strict;
 use Carp;
 
-use lib qw( lib ../lib );
-
 #Specific classes
-use LWP::UserAgent;
-use URI::Escape;
 use HTML::TreeBuilder::XPath;
-use My::Google::Scholar::Paper;
 
 use version; our $VERSION = qv('0.0.3');
 
@@ -25,70 +20,59 @@ use version; our $VERSION = qv('0.0.3');
 sub new {
   my $class = shift;
   my $options = shift;
-  bless $options, $class;
-  my $ua = LWP::UserAgent->new( agent => 'SchoSpider v0.1' );
-  $options->{'_ua'} = $ua;
-  my $tree= HTML::TreeBuilder::XPath->new;
-  $options->{'_xpath'}=$tree;
-  return $options;
-}
-
-sub _search {
-  my $self = shift;
-  my $query = shift || carp "No query!\n";
-  my $url = "http://scholar.google.com/scholar?$query";
-  my $resp = $self->{'_ua'}->get($url);
-  if ( $resp->is_success ) {
-    return  $resp->content;
-  } else {
-    carp "Problems searching : "+$resp->status_line ;
+  my $paper;
+  if ( !ref $options ) { # Escalar: será texto 
+    my $tree = HTML::TreeBuilder::XPath->new;
+    $tree->parse($options);
+    my $titulo_entry = $tree->findvalue( '//span[@class="w"]');
+    my ($tipo, $titulo) = ( $titulo_entry =~ m{(\[\w+\])?\s*(.+)}gs );
+    if ( !$titulo ) { #Alternative representation
+      ($tipo, $titulo) = ( $options =~ m{(\[\w+\])?\s*.+</font>\&nbsp;([^-<]+)(-|<)}gs );
+    }
+    my $autores_pub =  $tree->findvalue( '//span[@class="a"]');
+    my ($autores, $pub ) = ( $autores_pub =~ /([^-]+)\s*-\s*(.+)/gs );
+    my ($cited_by) = ($options =~ /Cited by (\d+)/gs);
+    $paper = { _tipo => $tipo,
+	       _titulo => $titulo,
+	       _pub => $pub,
+	       _cited_by => $cited_by || 0 };
+    if ( $autores =~ /,/ ) {
+      my @autores = split(/,\s*/, $autores );
+      $paper->{_autores} = \@autores;
+    } else {
+      $paper->{_autores} = [$autores];
+    }
   }
+  bless $paper, $class;
+  return $paper;
 }
 
-sub search_author {
+sub title {
   my $self = shift;
-  my $author = shift;
-  my $uri_author = uri_escape("\"$author\"");
-  my $query = "num=".$self->{'num'}."&btnG=Buscar+en+Google+Acad%C3%A9mico&as_sauthors=$uri_author&as_subj=".$self->{'as_subj'};
-  my $result = $self->_search($query);
-  $self->{'_xpath'}->parse( $result );
-  my $nb=$self->{'_xpath'}->findnodes( '/html/body//p[@class="g"]');
-  my @papers;
-  for my $n (@$nb ) {
-    push @papers, My::Google::Scholar::Paper->new( $n->as_HTML() );
-  }
-  return \@papers;
+  return $self->{'_titulo' };
 }
 
-sub h_index {
+sub cited_by {
   my $self = shift;
-  my $author = shift;
-  my $papers = $self->search_author( $author );
-  my @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
-  my $h_index = 0;
-  do {
-    $h_index++
-  } while $sorted_papers[$h_index]->cited_by > $h_index;
-  return $h_index;
-
+  return $self->{'_cited_by'};
 }
-
-1; # Magic true value required at end of module
+"h=100!"; # Magic true value required at end of module
 __END__
 
 =head1 NAME
 
-My::Google::Scholar - Download and parse Google Scholar files
+My::Google::Scholar::Paper - Structure to hold papers
 
 
 =head1 VERSION
 
-This document describes My::Google::Scholar version 0.0.1
+This document describes My::Google::Scholar version 0.0.3
 
 
 =head1 SYNOPSIS
 
-  use My::Google::Scholar;
+use My::Google::Scholar;
+use My::Google::Scholar::Paper
 
 my $scholar = My::Google::Scholar->new( { num => 100,
 					  as_subj => 'eng' });
