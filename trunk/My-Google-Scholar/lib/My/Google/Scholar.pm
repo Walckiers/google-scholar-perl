@@ -62,8 +62,13 @@ sub search_author {
 
 sub h_index {
   my $self = shift;
-  my $author = shift;
-  my $papers = $self->search_author( $author );
+  my $arg = shift;
+  my $papers;
+  if ( !ref $arg ) {
+    $papers =  $self->search_author( $arg );
+  } else {
+    $papers = $arg;
+  }
   my @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
   my $h_index = 0;
   do {
@@ -71,6 +76,22 @@ sub h_index {
   } while $sorted_papers[$h_index]->cited_by > $h_index;
   return $h_index;
 
+}
+
+sub references {
+  my $self = shift;
+  my $arg = shift;
+  my $papers;
+  if ( !ref $arg ) {
+    $papers =  $self->search_author( $arg );
+  } else {
+    $papers = $arg;
+  }
+  my $references;
+  for my $p ( @$papers ) {
+    $references += $p->cited_by();
+  }
+  return $references;
 }
 
 1; # Magic true value required at end of module
@@ -99,7 +120,11 @@ for my $p (@$papers ) {
   print "Title ", $p->title(), "\n";
 }
 
-my $h = $scholar->h_index( 'Holland, John' );
+my $h = $scholar->h_index( 'Holland, John' ); # or
+my $h = $scholar->h_index( $papers );
+
+my $cites = $scholar->references( 'Goldberg, David' ); # or
+my $cites = $scholar->references( $papers );
   
   
 =head1 DESCRIPTION
@@ -129,7 +154,20 @@ Returns an arrayref of L<My::Google::Scholar::Paper>'s
 
 my $h_index = $scholar->search_author( 'Koza, John' );
 
-Return Hirsch's H Index according to Google Scholar. 
+Return Hirsch's H Index according to Google Scholar.
+
+my $h_index = $scholar->search_author( $papers_ref );
+
+Can use as second argument a reference to an array of papers as
+returned by C<search_author>
+
+=head2 references( $author_name )
+
+Returns the total number of references found in the pages
+searched. Can also take as second argument a reference to an array of
+papers.
+
+Can be called also as references( $papers )
 
 =head1 DIAGNOSTICS
 
