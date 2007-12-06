@@ -31,7 +31,7 @@ sub new {
     }
     my $autores_pub =  $tree->findvalue( '//span[@class="a"]');
     my ($autores, $pub ) = ( $autores_pub =~ /([^-]+)\s*-?\s*(.*)/gs );
-    my ($cited_by) = ($options =~ /Cited by (\d+)/gs);
+    my ($cited_by) = ($options =~ /Cited by (\d*)/gs);
     $paper = { _tipo => $tipo,
 	       _titulo => $titulo,
 	       _pub => $pub,
