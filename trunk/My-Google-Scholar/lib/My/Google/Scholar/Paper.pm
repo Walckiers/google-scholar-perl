@@ -30,7 +30,7 @@ sub new {
       ($tipo, $titulo) = ( $options =~ m{(\[\w+\])?\s*.+</font>\&nbsp;([^-<]+)(-|<)}gs );
     }
     my $autores_pub =  $tree->findvalue( '//span[@class="a"]');
-    my ($autores, $pub ) = ( $autores_pub =~ /([^-]+)\s*-\s*(.+)/gs );
+    my ($autores, $pub ) = ( $autores_pub =~ /([^-]+)\s*-?\s*(.*)/gs );
     my ($cited_by) = ($options =~ /Cited by (\d+)/gs);
     $paper = { _tipo => $tipo,
 	       _titulo => $titulo,
