@@ -82,6 +82,27 @@ sub h_index {
 
 }
 
+sub g_index {
+  my $self = shift;
+  my $arg = shift;
+  my $papers;
+  if ( !ref $arg ) {
+    $papers =  $self->search_author( $arg );
+  } else {
+    $papers = $arg;
+  }
+  my @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
+  my $g_index = 0;
+  my $citations = 0;
+  do  {
+    $citations += $sorted_papers[$g_index]->cited_by();
+    $g_index++;
+  } until ( ( $citations < $g_index*$g_index )  
+	  && ($g_index < $#sorted_papers ) );
+  return $g_index;
+
+}
+
 sub references {
   my $self = shift;
   my $arg = shift;
@@ -161,6 +182,17 @@ my $h_index = $scholar->search_author( 'Koza, John' );
 Return Hirsch's H Index according to Google Scholar.
 
 my $h_index = $scholar->search_author( $papers_ref );
+
+Can use as second argument a reference to an array of papers as
+returned by C<search_author>
+
+=head2 g_index( $author_name )
+
+my $g_index = $scholar->search_author( 'Schoenauer, Marc' );
+
+Return g-index according to Google Scholar.
+
+my $g_index = $scholar->search_author( $papers_ref );
 
 Can use as second argument a reference to an array of papers as
 returned by C<search_author>
