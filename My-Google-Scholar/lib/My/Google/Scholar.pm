@@ -11,8 +11,9 @@ use LWP::UserAgent;
 use URI::Escape;
 use HTML::TreeBuilder::XPath;
 use My::Google::Scholar::Paper;
+use HTTP::Cookies;
 
-use version; our $VERSION = qv('0.0.3');
+use version; our $VERSION = qv('0.0.4');
 
 # Other recommended modules (uncomment to use):
 #  use IO::Prompt;
@@ -27,6 +28,8 @@ sub new {
   my $options = shift;
   bless $options, $class;
   my $ua = LWP::UserAgent->new( agent => 'SchoSpider v0.1' );
+  $ua->cookie_jar(HTTP::Cookies->new(file => "$ENV{HOME}/.lwpcookies.txt",
+				     autosave => 1));
   $options->{'_ua'} = $ua;
   my $tree= HTML::TreeBuilder::XPath->new;
   $options->{'_xpath'}=$tree;
