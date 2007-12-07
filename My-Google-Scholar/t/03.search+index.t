@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-use Test::Simple tests => 3;
+use Test::Simple tests => 4;
 use strict;
 use warnings;
 
@@ -18,7 +18,10 @@ ok( @$papers >= 50, "Koza's number of papers is correct" );
 my $h_index = $scholar->h_index( $papers );
 ok( $h_index >= 33, "Koza's h_index is OK" );
 
-
-
 my $cites = $scholar->references( $papers );
 ok( $cites >= 2000, "Koza's number of references is OK" );
+
+my $g_index = $scholar->g_index('Schoenauer, Marc');
+ok( $g_index >= 20, "Schoenauer's g_index is OK" );
+
+
