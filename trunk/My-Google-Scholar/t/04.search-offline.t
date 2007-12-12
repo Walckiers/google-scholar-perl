@@ -24,4 +24,13 @@ ok( $cites >= 1865, "Marc's number of references is OK" );
 my $g_index = $scholar->g_index( $papers );
 ok( $g_index >= 40, "Marc's g_index is OK" );
 
+$papers = LoadFile('Santiago García Carbajal-papers.yaml');
+$h_index = $scholar->h_index( $papers );
+ok( $h_index == 1, "Santiago's h_index is OK" );
+
+$cites = $scholar->references( $papers );
+ok( $cites == 1, "Santiago's number of references is OK" );
+
+my $g_index = $scholar->g_index( $papers );
+ok( $g_index == 1, "Santiago's g_index is OK" );
 
