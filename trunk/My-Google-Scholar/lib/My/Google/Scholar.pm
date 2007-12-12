@@ -78,7 +78,7 @@ sub h_index {
 	  && ($h_index < $#sorted_papers ) ) {
       $h_index++;
   } 
-  return $h_index;
+  return $h_index-1;
 
 }
 
