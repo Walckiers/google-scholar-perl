@@ -1,0 +1,8 @@
+---
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - B Adenso
+  _cited_by: 1
+  _pub: 'Díaz, S García-Carbajal, S Lozano - OR Spectrum, 2007 - Springer'
+  _tipo: ~
+  _titulo: An efficient GRASP algorithm for disassembly sequence planning
