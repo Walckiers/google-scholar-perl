@@ -104,14 +104,14 @@ sub g_index {
   } else {
       @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
   }
-  my $g_index = 0;
-  my $citations = 0;
-  while ( ( $citations >= $g_index*$g_index )  
-	  && ($g_index <= $#sorted_papers ) )  {
-    $citations += $sorted_papers[$g_index]->cited_by();
+  my $g_index = 1;
+  my $citations = $sorted_papers[0]->cited_by();
+  while ( ( ($g_index - 1) <= $#sorted_papers ) 
+	  && ( $citations >= $g_index*$g_index )  )  {
+    $citations += $sorted_papers[$g_index-1]->cited_by();
     $g_index++;
   } 
-  return $g_index;
+  return $g_index-1;
 
 }
 
