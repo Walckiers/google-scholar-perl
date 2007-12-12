@@ -66,16 +66,22 @@ sub search_author {
 sub h_index {
   my $self = shift;
   my $arg = shift;
+  my $sorted = shift || 'Yes'; #Sorted by default
   my $papers;
   if ( !ref $arg ) {
     $papers =  $self->search_author( $arg );
   } else {
     $papers = $arg;
   }
-  my @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
+  my @sorted_papers;
+  if ( $sorted eq 'Yes' ) {
+      @sorted_papers = @$papers;
+  } else {
+      @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
+  }
   my $h_index = 1;
-  while ( ( $sorted_papers[$h_index-1]->cited_by() >= $h_index )  
-	  && ($h_index < $#sorted_papers ) ) {
+  while (  ( ($h_index - 1) <= $#sorted_papers )  
+	   && ( $sorted_papers[$h_index-1]->cited_by() >= $h_index ) ) {  
       $h_index++;
   } 
   return $h_index-1;
@@ -85,21 +91,27 @@ sub h_index {
 sub g_index {
   my $self = shift;
   my $arg = shift;
+  my $sorted = shift || 'Yes'; # Sorted by default
   my $papers;
   if ( !ref $arg ) {
     $papers =  $self->search_author( $arg );
   } else {
     $papers = $arg;
   }
-  my @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
+  my @sorted_papers;
+  if ( $sorted eq 'Yes' ) {
+      @sorted_papers = @$papers;
+  } else {
+      @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
+  }
   my $g_index = 0;
   my $citations = 0;
   while ( ( $citations >= $g_index*$g_index )  
-	  && ($g_index < $#sorted_papers ) )  {
+	  && ($g_index <= $#sorted_papers ) )  {
     $citations += $sorted_papers[$g_index]->cited_by();
     $g_index++;
   } 
-  return $g_index -1 ;
+  return $g_index;
 
 }
 
@@ -117,6 +129,13 @@ sub references {
     $references += $p->cited_by();
   }
   return $references;
+}
+
+sub sort_papers {
+    my $self = shift;
+    my $papers = shift || die "No papers";
+    my @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
+    return \@sorted_papers;
 }
 
 1; # Magic true value required at end of module
@@ -204,6 +223,12 @@ searched. Can also take as second argument a reference to an array of
 papers.
 
 Can be called also as references( $papers )
+
+=head2 sort_papers( $papers ) 
+
+Sort papers according to number of cites
+
+=cut
 
 =head1 DIAGNOSTICS
 
