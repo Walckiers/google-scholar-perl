@@ -73,8 +73,8 @@ sub h_index {
     $papers = $arg;
   }
   my @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
-  my $h_index = 0;
-  while ( ( $sorted_papers[$h_index]->cited_by() >= $h_index )  
+  my $h_index = 1;
+  while ( ( $sorted_papers[$h_index-1]->cited_by() >= $h_index )  
 	  && ($h_index < $#sorted_papers ) ) {
       $h_index++;
   } 
