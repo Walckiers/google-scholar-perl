@@ -1,0 +1,901 @@
+---
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - Z Michalewicz
+    - 'M Schoenauer '
+  _cited_by: 435
+  _pub: 'Evolutionary Computation, 1996 - coe.uncc.edu'
+  _tipo: '[PDF]'
+  _titulo:  Evolutionary Algorithms for Constrained Parameter Optimization Problems
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - Z Michalewicz
+    - D Dasgupta
+    - RG Le Riche
+    - 'M … '
+  _cited_by: 137
+  _pub: 'Computers & Industrial Engineering, 1996 - Elsevier'
+  _tipo: ~
+  _titulo: Evolutionary algorithms for constrained engineering problems
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - 'S Xanthakis '
+  _cited_by: 123
+  _pub: 'Proceedings of the Fifth International Conference on Genetic …, 1993 - eeaax.polytechnique.fr'
+  _tipo: '[PS]'
+  _titulo: Constrained GA optimization
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - J Garnier
+    - L Kallel
+    - 'M Schoenauer '
+  _cited_by: 95
+  _pub: 'Evolutionary Computation, 1999 - cmap.polytechnique.fr'
+  _tipo: '[PS]'
+  _titulo:  Rigorous Hitting Times for Binary Mutations
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Keijzer
+    - JJ Merelo
+    - G Romero
+    - 'M Schoenauer '
+  _cited_by: 54
+  _pub: '… : 5th International Conference, Evolution Artificielle, EA …, 2002 - books.google.com'
+  _tipo: ~
+  _titulo: 'Evolving Objects: A General Purpose Evolutionary Computation Library'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - C Kane
+    - 'M Schoenauer '
+  _cited_by: 50
+  _pub: 'Control and Cybernetics, 1996 - eeaax.polytechnique.fr'
+  _tipo: '[PS]'
+  _titulo:  Topological optimum design using genetic algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - S Martin
+    - J Rivory
+    - 'M Schoenauer '
+  _cited_by: 42
+  _pub: 'Applied Optics, 1995 - OSA'
+  _tipo: ~
+  _titulo: Synthesis of optical multilayer systems using genetic algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - 'M Schoenauer '
+  _cited_by: 43
+  _pub: 'Genetic Algorithms in Engineering and Computer Sciences, 1995'
+  _tipo: ~
+  _titulo: Representations for evolutionary optimization and identification in structural mechanics
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - MG Arenas
+    - P Collet
+    - AE Eiben
+    - M Jelasity
+    - 'JJ … '
+  _cited_by: 43
+  _pub: 'Parallel Problem Solving from NaturePPSN VII, Proc. Seventh …, 2002 - Springer'
+  _tipo: ~
+  _titulo: A framework for distributed evolutionary algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - SB Hamida
+    - 'M Schoenauer '
+  _cited_by: 38
+  _pub: ieeexplore.ieee.org
+  _tipo: ~
+  _titulo: 'ASCHEA: New Results Using Adaptive Segregational Constraint Handling'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Sebag
+    - 'M Schoenauer '
+  _cited_by: 37
+  _pub: 'Proceedings of the 3rd Conference on Parallel Problem- …, 1994 - Springer'
+  _tipo: ~
+  _titulo: Controlling crossover through inductive learning
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - C Kane
+    - 'M Schoenauer '
+  _cited_by: 36
+  _pub: 'Artificial Evolution, 1995 - Springer'
+  _tipo: ~
+  _titulo: Genetic operators for two-dimensional shape optimization
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - L Kallel
+    - 'M Schoenauer '
+  _cited_by: 34
+  _pub: 'Proceedings of the Seventh International Conference on …, 1997 - citeseer.ist.psu.edu'
+  _tipo: ~
+  _titulo: Alternative Random Initialization in Genetic Algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - 'M Schoenauer '
+  _cited_by: 34
+  _pub: 'Evolutionary Programming, 1996 - lri.fr'
+  _tipo: '[PS]'
+  _titulo:  Shape representations and evolution schemes
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - 'Z Michalewicz '
+  _cited_by: 29
+  _pub: 'Proceedings of the 7 thInternational Conference on Genetic … - lri.fr'
+  _tipo: '[PS]'
+  _titulo: Boundary operators for constrained parameter optimization problems
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - D Delahaye
+    - JM Alliot
+    - M Schoenauer
+    - 'JL Farges '
+  _cited_by: 26
+  _pub: 'Proceedings of the European Conference on Artificial …, 1994 - recherche.enac.fr'
+  _tipo: '[PS]'
+  _titulo: Genetic algorithms for air trac assignment
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - P Collet
+    - E Lutton
+    - F Raynal
+    - 'M Schoenauer '
+  _cited_by: 26
+  _pub: 'GECCO99, Genetic and Evolutionary Computation Conference, …, 1999 - hal.inria.fr'
+  _tipo: ~
+  _titulo: 'Individual GP: an alternative viewpoint for the resolution of complex problems'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Sebag
+    - M Schoenauer
+    - 'C Ravise '
+  _cited_by: 26
+  _pub: 'Proceedings of the 7 thInternational Conference on Genetic …, 1997 - lri.fr'
+  _tipo: '[PS]'
+  _titulo: 'Toward Civilized Evolution: Developing Inhibitions'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - H Hamda
+    - F Jouve
+    - E Lutton
+    - M Schoenauer
+    - 'MÈ Sebag '
+  _cited_by: 25
+  _pub: 'Applied Intelligence, 2002 - Springer'
+  _tipo: ~
+  _titulo: Compact Unstructured Representations for Evolutionary Design
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - 'Z Michalewicz '
+  _cited_by: 27
+  _pub: 'Control and Cybernetics, 1997 - citeseer.ist.psu.edu'
+  _tipo: ~
+  _titulo: Evolutionary Computation
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - W Banzhaf
+    - R Poli
+    - M Schoenauer
+    - 'TC Fogarty '
+  _cited_by: 24
+  _pub: 'Lecture Notes in Computer Science, 1998'
+  _tipo: ~
+  _titulo: ~
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - M Sebag
+    - F Jouve
+    - B Lamy
+    - 'H … '
+  _cited_by: 22
+  _pub: 'Advances in Genetic Programming II - lri.fr'
+  _tipo: '[PS]'
+  _titulo: Evolutionary identification of macro-mechanical models
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - SB Hamida
+    - 'M Schoenauer '
+  _cited_by: 22
+  _pub: 'Proceedings of the Parallel Problem Solving from Nature VI … - cmap.polytechnique.fr'
+  _tipo: '[PS]'
+  _titulo: An Adaptive Algorithm for Constrained Optimization Problems
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - L Kallel
+    - 'F Jouve '
+  _cited_by: 21
+  _pub: 'Revue europeenne deselements nis. Vol, 1996 - eeaax.polytechnique.fr'
+  _tipo: '[PS]'
+  _titulo:  Mechanical Inclusions Identification by Evolutionary Computation.
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Sebag
+    - 'M Schoenauer '
+  _cited_by: 18
+  _pub: 'Parallel Problem Solving from Nature--PPSN IV: International …, 1996 - books.google.com'
+  _tipo: ~
+  _titulo: Mutation by Imitation in Boolean Evolution Strategies
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - P Collet
+    - E Lutton
+    - F Raynal
+    - 'M Schoenauer '
+  _cited_by: 18
+  _pub: 'Genetic Programming and Evolvable Machines, 2000 - Springer'
+  _tipo: ~
+  _titulo: Polar IFS+ Parisian Genetic Programming= Efficient IFS Inverse Problem Solving
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Sebag
+    - C Ravise
+    - 'M Schoenauer '
+  _cited_by: 19
+  _pub: 'Evolutionary Programming, 1996 - lri.fr'
+  _tipo: '[PS]'
+  _titulo:  Controlling evolution by means of machine learning
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - JM Alliot
+    - H Gruber
+    - 'M Schoenauer '
+  _cited_by: 15
+  _pub: 'Proceedings of the Ninth IEEE Conference on Artificial …, 1993'
+  _tipo: ~
+  _titulo: Using genetic algorithms for solving ATC conflicts
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - A Fadda
+    - 'M Schoenauer '
+  _cited_by: 15
+  _pub: 'Evolutionary Programming IV: Proceedings of the Fourth …, 1995 - books.google.com'
+  _tipo: ~
+  _titulo: Evolutionary Chromatographie Law Identification by Recurrent Neural Nets
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - H Hamda
+    - 'M Schoenauer '
+  _cited_by: 14
+  _pub: 'Evolutionary Design and Manufacture, 2000 - hal.archives-ouvertes.fr'
+  _tipo: '[PDF]'
+  _titulo:  Adaptive techniques for evolutionary topological optimum design
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Sebag
+    - M Schoenauer
+    - 'C Ravise '
+  _cited_by: 14
+  _pub: 'Proceedings of the Sixth Annual Conference on Evolutionary …, 1997 - Springer'
+  _tipo: ~
+  _titulo: Inductive learning of mutation step-size in evolutionary parameter optimization
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - MG Arenas
+    - B Dolin
+    - JJM Guervós
+    - PAC Valdivieso
+    - '… '
+  _cited_by: 14
+  _pub: 'Proceedings of the Genetic and Evolutionary Computation …, 2002 - portal.acm.org'
+  _tipo: ~
+  _titulo: 'JEO: Java Evolving Objects'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - D Delahaye
+    - JM Alliot
+    - M Schoenauer
+    - 'JL Farges '
+  _cited_by: 12
+  _pub: 'Proceedings of the Conference on Evolutionary Programming, 1995'
+  _tipo: ~
+  _titulo: Genetic algorithms for automatic regroupement of air traffic control sectors
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - F Jouve
+    - 'L Kallel '
+  _cited_by: 12
+  _pub: '… Algorithms in Engineering Applications. Springer Verlag, 1997 - lri.fr'
+  _tipo: '[PS]'
+  _titulo: Identification of mechanical inclusions
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - E Ronald
+    - 'S Damour '
+  _cited_by: 10
+  _pub: 'editor, Actes du Gongres Neuro-Nimes'
+  _tipo: ~
+  _titulo: Evolving nets for control
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - 'Z Michalewicz '
+  _cited_by: 10
+  _pub: 'Proceedings of the 7th International Conference on …, 1998 - portal.acm.org'
+  _tipo: ~
+  _titulo: Sphere Operators and Their Applicability for Constrained Parameter Optimization Problems
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - 'M Sebag '
+  _cited_by: 9
+  _pub: 'Proceedings of the seventh international conference (1990) …, 1990 - portal.acm.org'
+  _tipo: ~
+  _titulo: Incremental learning of rules and Meta-rules
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - JJ Merelo
+    - M Keijzer
+    - M Schoenauer
+  _cited_by: 9
+  _pub: ''
+  _tipo: ~
+  _titulo: EO Evolutionary computation framework
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - JM Alliot
+    - H Gruber
+    - G Joly
+    - 'M Schoenauer '
+  _cited_by: 8
+  _pub: 'Proceedings, The Ninth International Conference on … - recherche.enac.fr'
+  _tipo: '[PS]'
+  _titulo: Genetic algorithms for solving air trac control conflicts
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - A Auger
+    - M Schoenauer
+    - 'N Vanhaecke '
+  _cited_by: 9
+  _pub: 'Parallel Problem Solving from Nature - Springer'
+  _tipo: ~
+  _titulo: 'LS-CMA-ES: A second-order algorithm for covariance matrix adaptation'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - A Auger
+    - C Le Bris
+    - 'M Schoenauer '
+  _cited_by: 8
+  _pub: 'Proceedings of the Genetic and Evolutionary Conference, 2003 - Springer'
+  _tipo: ~
+  _titulo: 'Dimension-independent convergence rate for non-isotropic (1, ?)- es'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - S BEN HAMIDA
+    - 'M SCHOENAUER '
+  _cited_by: 7
+  _pub: 'Lecture notes in computer science - cat.inist.fr'
+  _tipo: ~
+  _titulo: An adaptive algorithm for constrained optimization problems
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - H Hamda
+    - O Roudenko
+    - 'M Schoenauer '
+  _cited_by: 7
+  _pub: 'Adaptive Computing in Design and Manufacture V, 2002 - books.google.com'
+  _tipo: ~
+  _titulo: Multi-Objective Evolutionary Topological Optimum Design
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - 'M Sebag '
+  _cited_by: 7
+  _pub: 'Arxiv preprint cs.AI/0602021, 2006 - arxiv.org'
+  _tipo: '[PDF]'
+  _titulo:  Using Domain Knowledge in Evolutionary System Identification
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - C Gagne
+    - M Schoenauer
+    - M Parizeau
+    - 'M Tomassini '
+  _cited_by: 7
+  _pub: 'Arxiv preprint cs.LG/0601044, 2006 - Springer'
+  _tipo: ~
+  _titulo: 'Genetic Programming, Validation Sets, and Parsimony Pressure'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - D Delahaye
+    - JM Alliot
+    - M Schoenauer
+    - 'JL Farges '
+  _cited_by: 6
+  _pub: 'Group - recherche.enac.fr'
+  _tipo: '[PS]'
+  _titulo:  Genetic Algorithms for automatic regroupement of Air Trac Control sectors
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - C Kavka
+    - 'M Schoenauer '
+  _cited_by: 6
+  _pub: '8th International Conference on Parallel Problem Solving …, 2004 - Springer'
+  _tipo: ~
+  _titulo: Evolution of voronoi-based fuzzy controllers
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - P Lutton
+    - E Lutton
+    - F Raynal
+    - 'M Schoenauer '
+  _cited_by: 6
+  _pub: Research Report
+  _tipo: ~
+  _titulo: Polar IFS+ individual genetic programming= efficient IFS inverse problem solving
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - EMA Ronald
+    - 'M Schoenauer '
+  _cited_by: 6
+  _pub: 'Proceedings of the International Conference on Evolutionary …, 1994 - portal.acm.org'
+  _tipo: ~
+  _titulo: 'Genetic Lander: An Experiment in Accurate Neuro-Genetic Control'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - N Durand
+    - N Alech
+    - JM Alliot
+    - 'M Schoenauer '
+  _cited_by: 5
+  _pub: 'Proceedings of the Second Singapore Conference on …, 1994'
+  _tipo: ~
+  _titulo: Genetic algorithms for optimal air trac conflict resolution
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - S Oussedik
+    - D Delahaye
+    - 'M Schoenauer '
+  _cited_by: 5
+  _pub: 'Proceedings of the 2000 congress on evolutionary computation …, 2000 - hal.ccsd.cnrs.fr'
+  _tipo: '[PDF]'
+  _titulo: Flights alternative routes generator by genetic algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - L Kallel
+    - 'M Schoenauer '
+  _cited_by: 5
+  _pub: '1996 - barbes.polytechnique.fr'
+  _tipo: '[PS]'
+  _titulo:  Fitness distance correlation for variable length representations
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - C Kavka
+    - 'M Schoenauer '
+  _cited_by: 5
+  _pub: 'Proceedings of the Genetic and Evolutionary Computation …, 2003 - Springer'
+  _tipo: ~
+  _titulo: Voronoi diagrams based function identification
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Sebag
+    - M Schoenauer
+    - 'H Maitournam '
+  _cited_by: 5
+  _pub: 'Quagliarella et al., editors, Genetic Algorithms and …, 1998 - lri.fr'
+  _tipo: '[PS]'
+  _titulo: Parametric and Non-Parametric Identification of Macro-Mechanical Models
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - F Mansanne
+    - F Carrere
+    - A Ehinger
+    - 'M Schoenauer '
+  _cited_by: 5
+  _pub: 'Foundation of Intelligent Systems 12th International … - Springer'
+  _tipo: ~
+  _titulo: Evolutionary algorithms as fitness function debuggers
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Sebag
+    - M Schoenauer
+    - 'M Peyral '
+  _cited_by: 5
+  _pub: 'Fundamenta Informaticae, 1998 - lri.fr'
+  _tipo: '[PS]'
+  _titulo:  Revisiting the Memory of Evolution
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - O Roudenko
+    - 'M Schoenauer '
+  _cited_by: 5
+  _pub: eprints.pascal-network.org
+  _tipo: '[PS]'
+  _titulo:  A Steady Performance Stopping Criterion for Pareto-based Evolutionary Algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Peyral
+    - A Ducoulombier
+    - C Ravise
+    - M Schoenauer
+    - '… '
+  _cited_by: 4
+  _pub: 'Artificial Evolution - Springer'
+  _tipo: ~
+  _titulo: Mimetic evolution
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Keijzer
+    - JJM Guervós
+    - G Romero
+    - 'M Schoenauer '
+  _cited_by: 4
+  _pub: '2001 - October'
+  _tipo: ~
+  _titulo: ~
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Sebag
+    - 'M Schoenauer '
+  _cited_by: 4
+  _pub: 'Proceedings of ICML-90, International Conference on Machine …, 1990'
+  _tipo: ~
+  _titulo: Incremental learning of rules and meta
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - N Godzik
+    - M Schoenauer
+    - 'M Sebag '
+  _cited_by: 4
+  _pub: 'GR et al., editor, Applications of Evolutionary Computing, …, 2003 - Springer'
+  _tipo: ~
+  _titulo: Evolving symbolic controllers
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - T Bosio
+    - R Fontana
+    - O Rudenko
+    - 'M Schoenauer '
+  _cited_by: 4
+  _pub: 'Giannakoglou et al.[560]'
+  _tipo: ~
+  _titulo: Constrained multi
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - 'ERM Schoenauer '
+  _cited_by: 4
+  _pub: 'Parallel Problem Solving from Nature--PPSN III: …, 1994 - books.google.com'
+  _tipo: ~
+  _titulo: 'Genetic Lander: An Experiment in Accurate Neuro-Genetic Control'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - C Kane
+    - 'M Schoenauer '
+  _cited_by: 12
+  _pub: 'Revue Francaise de Mecanique, 1997 - eeaax.polytechnique.fr'
+  _tipo: '[PS]'
+  _titulo:  Optimisation topologique de formes par algorithmes genetiques
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - N Durand
+    - N Alech
+    - JM Alliot
+    - 'M Schoenauer '
+  _cited_by: 3
+  _pub: 'Proceedings of the~ Second Singapore Conference on …, 1994'
+  _tipo: ~
+  _titulo: Genetic algorithms for optimal air traffic conflict resolution
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - D Delahaye
+    - N Durand
+    - JM Alliot
+    - 'M Schoenauer '
+  _cited_by: 4
+  _pub: 'Proceedings of the 14th IFORS Triennial Conference, 1996 - citeseer.ist.psu.edu'
+  _tipo: ~
+  _titulo: Genetic algorithms for air traffic control systems
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - D Delahaye
+    - JM Alliot
+    - M Schoenauer
+    - 'JL Farges '
+  _cited_by: 3
+  _pub: Proc. of the Fourth International Conference on Evolutionary …
+  _tipo: ~
+  _titulo: Genetic algorithms for automatic regrouping of air traffic control sectors
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - O Rudenko
+    - M Schoenauer
+    - T Bosio
+    - 'R Fontana '
+  _cited_by: 3
+  _pub: '… : 5th International Conference, Evolution Artificielle, EA …, 2002 - books.google.com'
+  _tipo: ~
+  _titulo: A Multiobjective Evolutionary Algorithm for Car Front End Design
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - K Deb
+    - G Rudolph
+    - X Yao
+    - E Lutton
+    - '… '
+  _cited_by: 3
+  _pub: Lecture Notes in Computer Science
+  _tipo: ~
+  _titulo: 'Parallel Problem Solving from Nature VI, volume 1917 of'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - A Auger
+    - M Schoenauer
+    - 'O Teytaud '
+  _cited_by: 3
+  _pub: 'Proceedings of the 2005 conference on Genetic and …, 2005 - portal.acm.org'
+  _tipo: ~
+  _titulo: Local and global order 3/2 convergence of a surrogate evolutionary algorithm
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - 'M Schoenauer '
+  _cited_by: 3
+  _pub: Proceedings of the Fifth Annual Conference on Evolutionary …
+  _tipo: ~
+  _titulo: 'Shape representations and evolution schemes. In?, editor'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - A RACINE
+    - M SCHOENAUER
+    - 'P DAGUE '
+  _cited_by: 3
+  _pub: "Genetic Programming: First European Workshop, EuroGP'98: …, 1998 - books.google.com"
+  _tipo: ~
+  _titulo: A Dynamic Lattice to Envolve Hierarchically Shared Subroutines
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - L Kallel
+    - 'M Schoenauer '
+  _cited_by: 3
+  _pub: 'Proc. of 3rd European Conf. on Artificial Evolution, Nimes, …, 1997 - Springer'
+  _tipo: ~
+  _titulo: 'A Priori Comparison of Binary Crossover Operators: No Universal Statistical Measure, but a Set of …'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - O Roudenko
+    - 'M Schoenauer '
+  _cited_by: 3
+  _pub: 'Arxiv preprint cs.AI/0505080, 2005 - Springer'
+  _tipo: ~
+  _titulo: Dominance Based Crossover Operator for Evolutionary Multi-objective Algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - JJ Merelo
+    - M Keijzer
+    - M Schoenauer
+    - J Eggermont
+    - 'S … '
+  _cited_by: 3
+  _pub: 'Vu le, 2005'
+  _tipo: ~
+  _titulo: 'Evolving Objects: Evolutionary computation framework'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - 'M Sebag '
+  _cited_by: 3
+  _pub: 'Davidor et al.[2357], page'
+  _tipo: ~
+  _titulo: Controlling crossover through inductive learning
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - N Durand
+    - N Alech
+    - JM Alliot
+    - 'M Schoenauer '
+  _cited_by: 2
+  _pub: Proceedings of the 2nd Singapore International Conference on …
+  _tipo: ~
+  _titulo: 'Genetic algorithms for conflict resolution in air traffic. In?, editor'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - S Landau
+    - O Sigaud
+    - 'M Schoenauer '
+  _cited_by: 2
+  _pub: 'Proceedings of the 2005 conference on Genetic and …, 2005 - portal.acm.org'
+  _tipo: ~
+  _titulo: ATNoSFERES revisited
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Schoenauer
+    - B Lamy
+    - 'F Jouve '
+  _cited_by: 2
+  _pub: cs.bham.ac.uk
+  _tipo: ~
+  _titulo: 'Identification of mechanical behaviour by genetic programming part II: Energy formulation'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - L Taieb
+    - 'M Schoenauer '
+  _cited_by: 2
+  _pub: First International Conference on Genetic Algorithms in …
+  _tipo: ~
+  _titulo: Optimization of direction finders by genetic algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Sebag
+    - M Schoenauer
+    - 'C Ravise '
+  _cited_by: 2
+  _pub: 'Machine Learning: ECML-95: 8th European Conference on …, 1995 - books.google.com'
+  _tipo: ~
+  _titulo: An Induction-based Control for Genetic Algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - K Abboud
+    - 'M Schoenauer '
+  _cited_by: 3
+  _pub: 'Lecture Notes In Computer Science; Vol. 2310, 2001 - Springer'
+  _tipo: ~
+  _titulo: 'Surrogate deterministic mutation: Preliminary results'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Sebag
+    - 'M Schoenauer '
+  _cited_by: 2
+  _pub: 'Uncertainty modeling: theory and applications. Machine …, 1994 - citeseer.ist.psu.edu'
+  _tipo: ~
+  _titulo: Inductive Learning of Membership Functions and Fuzzy Rules
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - AE Eiben
+    - M Schoenauer
+    - DWF van Krevelen
+    - 'MC … '
+  _cited_by: 2
+  _pub: 'Proceedings of the 9th annual conference on Genetic and …, 2007 - portal.acm.org'
+  _tipo: ~
+  _titulo: Autonomous selection in evolutionary algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - H Hamda
+    - O Roudenko
+    - 'M Schoenauer '
+  _cited_by: 2
+  _pub: 'Fifth International Conference on Adaptive Computing in …, 2002 - jeo.org'
+  _tipo: '[PS]'
+  _titulo: Application of a Multi-Objective Evolutionary Algorithm to Topological Optimum Design
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - C Ravise
+    - M Sebag
+    - 'M Schoenauer '
+  _cited_by: 2
+  _pub: 'Lecture Notes In Computer Science, 1995 - portal.acm.org'
+  _tipo: ~
+  _titulo: Induction-Based Control of Genetic Algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - C Gagne
+    - M Schoenauer
+    - M Sebag
+    - 'M Tomassini '
+  _cited_by: 2
+  _pub: 'Proceedings of Parallel Problem Solving in Nature, 2006 - Springer'
+  _tipo: ~
+  _titulo: Genetic Programming for Kernel-based Learning with Co-evolving Subsets Selection
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - F Raynal
+    - P Collet
+    - E Lutton
+    - 'M Schoenauer '
+  _cited_by: 2
+  _pub: 'Genetic Programming and Evolvable Machines Journal, 2000'
+  _tipo: ~
+  _titulo: Polar IFS+ Parisian Genetic Programming= Efficient IFS Inverse Problem Solving
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - N Durand
+    - JM Alliot
+    - M Schoenauer
+    - 'JL Farges '
+  _cited_by: 1
+  _pub: '1993 - citeseer.ist.psu.edu'
+  _tipo: ~
+  _titulo: Genetic algorithms for optimal plane conflict resolution
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - N Durand
+    - N Alech
+    - JM Alliot
+    - 'M Schoenauer '
+  _cited_by: 1
+  _pub: 'Proceedings of the Second Singapore Conference on …, 1994'
+  _tipo: ~
+  _titulo: Genetic algorithms for conflict resolution in air trac
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - AE Eiben
+    - 'M Schoenauer '
+  _cited_by: 1
+  _pub: '2002 - Elsevier'
+  _tipo: ~
+  _titulo: Special Issue on Evolutionary Computing
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - AE Eiben
+    - T Back
+    - M Schoenauer
+    - 'HP Schwefel '
+  _cited_by: 1
+  _pub: 'Lecture Notes in Computational Science, 1998'
+  _tipo: ~
+  _titulo: Parallel Problem Solving from Nature
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - T Bäck
+    - M Schoenauer
+    - 'L Willmes '
+  _cited_by: 1
+  _pub: 'Natural Computing, 2004 - Springer'
+  _tipo: ~
+  _titulo: Preface
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - F Raynal
+    - P Collet
+    - E Lutton
+    - 'M Schoenauer '
+  _cited_by: 1
+  _pub: Submitted to CEC99
+  _tipo: ~
+  _titulo: Manipulation of IFS Attractors using Genetic Programming
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - P Collet
+    - M Schoenauer
+    - E Lutton
+    - 'J Louchet '
+  _cited_by: 1
+  _pub: 'Writing, 2001 - hal.inria.fr'
+  _tipo: ~
+  _titulo: 'EASEA: un langage de spécification pour les algorithmes évolutionnaires'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - C Kavka
+    - 'M Schoenauer '
+  _cited_by: 1
+  _pub: 'Genetic and Evolutionary Computation Conference GECCO, 2003'
+  _tipo: ~
+  _titulo: Voronoi based function approximation
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - C Kane
+    - 'M Schoenauer '
+  _cited_by: 1
+  _pub: 'Springer-Verlag, Berlin. conf. prog ga95aKane'
+  _tipo: ~
+  _titulo: ~
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - SB Hamida
+    - A Racine
+    - 'M Schoenauer '
+  _cited_by: 1
+  _pub: "Artificial Evolution: 4th European Conference, AE'99, …, 2000 - books.google.com"
+  _tipo: ~
+  _titulo: Two Evolutionary Approaches to Design Phase Plate for Tailoring Focal-Plane Irradiance Profile
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - Y Semet
+    - 'M Schoenauer '
+  _cited_by: 1
+  _pub: 'Proceedings of the 8th annual conference on Genetic and …, 2006 - portal.acm.org'
+  _tipo: ~
+  _titulo: 'On the benefits of inoculation, an example in train scheduling'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - A Auger
+    - AB Haj
+  _cited_by: 1
+  _pub: 'Yedder, M Schoenauer - Quantum Control: Mathematical and Numerical Challenges: Crm …, 2003 - books.google.com'
+  _tipo: ~
+  _titulo: Overview and Software Guide of Evolutionary Algorithms; ACase Study in Quantum Control

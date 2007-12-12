@@ -1,0 +1,67 @@
+---
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - F ROJAS RUIZ
+    - CG PUNTONET
+    - I ROJAS RUIZ
+    - 'M … '
+  _cited_by: 0
+  _pub: 'Lecture notes in computer science - cat.inist.fr'
+  _tipo: ~
+  _titulo: Plugging an histogram-based contrast function on a genetic algorithm for solving postnonlinear-BSS
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FR Ruiz
+    - CG Puntonet
+    - 'IR Ruiz '
+  _cited_by: 0
+  _pub: dice.ucl.ac.be
+  _tipo: '[PDF]'
+  _titulo:  Analysis of contrast functions in a genetic algorithm for post-nonlinear blind source separation
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - IR Ruiz
+    - H Pomares
+    - J Gonzales
+    - P Gloesekotter
+    - 'J … '
+  _cited_by: 0
+  _pub: 'FUZZ-IEEE, 2001'
+  _tipo: ~
+  _titulo: Multideme Evolution algorithm Based Approach to the Generation of Fuzzy Systems
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FR Ruiz
+    - CG Puntonet
+    - IR Ruiz
+    - M Rodríguez
+  _cited_by: 0
+  _pub: 'Álvarez … - Springer'
+  _tipo: ~
+  _titulo: Plugging an Histogram-Based Contrast Function on a Genetic Algorithm for Solving PostNonLinear-BSS
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - IR Ruiz
+    - 'CG Puntonet '
+  _cited_by: 0
+  _pub: 'Independent Component Analysis And Blind Signal Separation: …, 2004 - books.google.com'
+  _tipo: ~
+  _titulo: Geometrical ICA-Based Method for Blind Separation of Super-Gaussian Signals
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - M Rodríguez
+  _cited_by: 0
+  _pub: 'Álvarez, FR Ruiz, R Martín-Clemente, … - Lecture notes in computer science - Springer'
+  _tipo: ~
+  _titulo: Geometrical ICA-Based Method for Blind Separation of Super-Gaussian Signals
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - AG Perales
+    - IR Ruiz
+    - JG Peñalver
+    - HP Cintas
+    - 'LJH … '
+  _cited_by: 2
+  _pub: 'Fuzzy economic review, 2005 - dialnet.unirioja.es'
+  _tipo: ~
+  _titulo: RBF centers initialization using fuzzy clustering technique for function approximation problems
