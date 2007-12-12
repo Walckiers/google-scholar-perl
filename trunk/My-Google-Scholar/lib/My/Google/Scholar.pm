@@ -94,11 +94,11 @@ sub g_index {
   my @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
   my $g_index = 0;
   my $citations = 0;
-  do  {
+  while ( ( $citations < $g_index*$g_index )  
+	  && ($g_index < $#sorted_papers ) )  {
     $citations += $sorted_papers[$g_index]->cited_by();
     $g_index++;
-  } until ( ( $citations < $g_index*$g_index )  
-	  && ($g_index < $#sorted_papers ) );
+  } 
   return $g_index;
 
 }
