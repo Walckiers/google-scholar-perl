@@ -1,0 +1,95 @@
+---
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FF de Vega
+    - 'EC Paz '
+  _cited_by: 0
+  _pub: doi.ieeecomputersociety.org
+  _tipo: ~
+  _titulo: Message from the PBA Chairs
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FF de Vega
+    - GG Gil
+    - 'JAG Pulido '
+  _cited_by: 0
+  _pub: 'Proceedings of the 5th European Conference on Genetic …, 2002 - portal.acm.org'
+  _tipo: ~
+  _titulo: Comparing Synchronous and Asynchronous Parallel and Distributed Genetic Programming Models
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - DL González
+    - 'FF de Vega '
+  _cited_by: 0
+  _pub: 'Proceedings of the 9th annual conference on Genetic and …, 2007 - portal.acm.org'
+  _tipo: ~
+  _titulo: 'Dynamic populations and length evolution: key factors for analyzing fault tolerance on parallel …'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - JA Gómez
+  _cited_by: 0
+  _pub: 'Pulido, JM Matas-Santiago, F Pérez- … - Springer'
+  _tipo: ~
+  _titulo: 'Hardware Modelling of Cellular Automata: The Game of Life Case'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FF de Vega
+    - M Tomassini
+    - L Vanneschi
+    - 'L Bucher '
+  _cited_by: 0
+  _pub: "Proceedings of the 7th European PVM/MPI Users' Group Meeting …, 2000 - portal.acm.org"
+  _tipo: ~
+  _titulo: A Distributed Computing Environment for Genetic Programming Using MPI
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FF de Vega
+    - JM Sánchez
+  _cited_by: 0
+  _pub: "Pérez, M Tomassini, JAG … - Proceedings of the 6th European PVM/MPI Users' Group Meeting …, 1999 - portal.acm.org"
+  _tipo: ~
+  _titulo: A Parallel Genetic Programming Tool Based on PVM
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FF de Vega
+    - M Tomassini
+    - 'L Vanneschi '
+  _cited_by: 0
+  _pub: 'Proceedings of the 4th European Conference on Genetic …, 2001 - portal.acm.org'
+  _tipo: ~
+  _titulo: Studying the Influence of Communication Topology and Migration on Distributed Genetic Programming
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FF de Vega
+    - JM Sánchez
+  _cited_by: 0
+  _pub: 'Pérez, M Tomassini - Proceedings of the 4th International Conference on Evolvable …, 2001 - portal.acm.org'
+  _tipo: ~
+  _titulo: Placing and Routing Circuits on FPGAs by Means of Parallel and Distributed Genetic Programming
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FF de Vega
+    - E Cantú
+  _cited_by: 0
+  _pub: 'Paz - Journal of Parallel and Distributed Computing, 2006 - portal.acm.org'
+  _tipo: ~
+  _titulo: 'Introduction: special issue on parallel bioinspired algorithms'
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FF de Vega
+    - E Cantü
+  _cited_by: 0
+  _pub: 'Paz, L JI, T Manzano - Parallel Problem Solving from Nature--PPSN VIII: 8th …, 2004 - books.google.com'
+  _tipo: ~
+  _titulo: Saving Resources with Plagues in Genetic Algorithms
+- !!perl/hash:My::Google::Scholar::Paper
+  _autores:
+    - FF de Vega
+    - GG Gil
+    - JAG Pulido
+    - JL Guisado
+    - 'S … '
+  _cited_by: 1
+  _pub: 'Parallel Problem Solving from Nature--PPSN VIII: 8th …, 2004 - books.google.com'
+  _tipo: ~
+  _titulo: Control of Bloat in Genetic Programming by Means of the Island Model
