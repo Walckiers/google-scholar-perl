@@ -77,7 +77,7 @@ sub h_index {
   if ( $sorted eq 'Yes' ) {
       @sorted_papers = @$papers;
   } else {
-      @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
+      @sorted_papers = @{$self->sort_papers( $papers )};
   }
   my $h_index = 1;
   while (  ( ($h_index - 1) <= $#sorted_papers )  
@@ -102,17 +102,20 @@ sub g_index {
   if ( $sorted eq 'Yes' ) {
       @sorted_papers = @$papers;
   } else {
-      @sorted_papers = sort { $b->cited_by() <=> $a->cited_by() } @$papers;
+      @sorted_papers = @{$self->sort_papers( $papers )};
   }
-  my $g_index = 1;
-  my $citations = $sorted_papers[0]->cited_by();
-  while ( ( ($g_index - 1) <= $#sorted_papers ) 
-	  && ( $citations >= $g_index*$g_index )  )  {
-    $citations += $sorted_papers[$g_index-1]->cited_by();
-    $g_index++;
+  if ( $sorted_papers[0]->cited_by() == 0 ) {
+      return 0;
+  }
+  my $citations =0;
+  my $num_papers = 0;
+  for ( my $g_index = 0; $g_index <= $#sorted_papers; $g_index++ ) {
+      $citations += $sorted_papers[$g_index]->cited_by();
+      $num_papers = $g_index +1;
+      last if $citations <=  $num_papers * $num_papers;
   } 
-  return $g_index-1;
 
+  return $num_papers;
 }
 
 sub references {
@@ -124,7 +127,7 @@ sub references {
   } else {
     $papers = $arg;
   }
-  my $references;
+  my $references = 0;
   for my $p ( @$papers ) {
     $references += $p->cited_by();
   }

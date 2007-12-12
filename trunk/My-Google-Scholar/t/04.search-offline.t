@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-use Test::Simple tests => 8;
+use Test::Simple tests => 10;
 use strict;
 use warnings;
 
@@ -41,3 +41,13 @@ ok( $h_index == 1, "Nacho's h_index is OK" );
 
 $g_index = $scholar->g_index( $papers, 'No' );
 ok( $g_index == 2, "Nacho's g_index is OK" );
+
+
+$papers = LoadFile('paco.yaml');
+$h_index = $scholar->h_index( $papers, 'No' );
+ok( $h_index == 1, "Paco's h_index is OK" );
+
+$g_index = $scholar->g_index( $papers, 'No' );
+ok( $g_index == 1, "Paco's g_index is OK" );
+
+
