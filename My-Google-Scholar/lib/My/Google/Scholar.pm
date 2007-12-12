@@ -99,7 +99,7 @@ sub g_index {
     $citations += $sorted_papers[$g_index]->cited_by();
     $g_index++;
   } 
-  return $g_index;
+  return $g_index -1 ;
 
 }
 
