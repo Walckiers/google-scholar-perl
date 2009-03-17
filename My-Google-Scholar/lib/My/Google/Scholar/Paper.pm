@@ -25,7 +25,7 @@ sub new {
     my $tree = HTML::TreeBuilder::XPath->new;
     $tree->parse($options);
     my $titulo_entry = $tree->findvalue( '//h3[@class="r"]');
-    my ($tipo, $titulo) = ( $titulo_entry =~ m{(\[\w+\])? (.+)}gs );
+    my ($tipo, $titulo) = ( $titulo_entry =~ m{(\[\w+\])? ?(.+)}gs );
     if ( !$titulo ) { #Alternative representation
       ($tipo, $titulo) = ( $options =~ m{(\[\w+\])? .+</font>\&nbsp;([^-<]+)(-|<)}gs );
     }

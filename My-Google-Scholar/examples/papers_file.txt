@@ -1,0 +1,3 @@
+Evolving multilayer perceptrons
+Evolving objects: A general purpose evolutionary computation library
+A framework for distributed evolutionary algorithms
