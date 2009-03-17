@@ -21,13 +21,13 @@ sub new {
   my $class = shift;
   my $options = shift;
   my $paper;
-  if ( !ref $options ) { # Escalar: será texto 
+  if ( !ref $options ) { # Escalar: serÃ¡ texto 
     my $tree = HTML::TreeBuilder::XPath->new;
     $tree->parse($options);
-    my $titulo_entry = $tree->findvalue( '//span[@class="w"]');
-    my ($tipo, $titulo) = ( $titulo_entry =~ m{(\[\w+\])?\s*(.+)}gs );
+    my $titulo_entry = $tree->findvalue( '//h3[@class="r"]');
+    my ($tipo, $titulo) = ( $titulo_entry =~ m{(\[\w+\])? (.+)}gs );
     if ( !$titulo ) { #Alternative representation
-      ($tipo, $titulo) = ( $options =~ m{(\[\w+\])?\s*.+</font>\&nbsp;([^-<]+)(-|<)}gs );
+      ($tipo, $titulo) = ( $options =~ m{(\[\w+\])? .+</font>\&nbsp;([^-<]+)(-|<)}gs );
     }
     my $autores_pub =  $tree->findvalue( '//span[@class="a"]');
     my ($autores, $pub ) = ( $autores_pub =~ /([^-]+)\s*-?\s*(.*)/gs );

@@ -54,11 +54,12 @@ sub search_author {
   my $uri_author = uri_escape("\"$author\"");
   my $query = "num=".$self->{'num'}."&btnG=Buscar+en+Google+Acad%C3%A9mico&as_sauthors=$uri_author&as_subj=".$self->{'as_subj'};
   my $result = $self->_search($query);
-  $self->{'_xpath'}->parse( $result );
-  my $nb=$self->{'_xpath'}->findnodes( '/html/body//p[@class="g"]');
+#  $self->{'_xpath'}->parse( $result );
+#  my $nb=$self->{'_xpath'}->findnodes( '/html/body//p[@class="g"]');
+  my @papers_html = ($result =~ /<p class=g>(.+?)   /gs);
   my @papers;
-  for my $n (@$nb ) {
-    push @papers, My::Google::Scholar::Paper->new( $n->as_HTML() );
+  for my $n (@papers_html ) {
+    push @papers, My::Google::Scholar::Paper->new( $n );
   }
   return \@papers;
 }
