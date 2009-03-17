@@ -64,6 +64,23 @@ sub search_author {
   return \@papers;
 }
 
+sub search_title {
+  my $self = shift;
+  my $title = shift;
+  my $uri_title = uri_escape("\"$title\"");
+  my $query = "num=".$self->{'num'}."&btnG=Buscar+en+Google+Acad%C3%A9mico&as_epq=$uri_title&as_occt=title";
+  ($query .= "&as_subj=".$self->{'as_subj'}) if $self->{'as_subj'};
+  my $result = $self->_search($query);
+#  $self->{'_xpath'}->parse( $result );
+#  my $nb=$self->{'_xpath'}->findnodes( '/html/body//p[@class="g"]');
+  my @papers_html = ($result =~ /<p class=g>(.+?)   /gs);
+  my @papers;
+  for my $n (@papers_html ) {
+    push @papers, My::Google::Scholar::Paper->new( $n );
+  }
+  return \@papers;
+}
+
 sub h_index {
   my $self = shift;
   my $arg = shift;
