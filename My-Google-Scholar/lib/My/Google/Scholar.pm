@@ -12,8 +12,10 @@ use URI::Escape;
 use HTML::TreeBuilder::XPath;
 use My::Google::Scholar::Paper;
 use HTTP::Cookies;
+use utf8;
+use Encode;
 
-use version; our $VERSION = qv('0.0.4');
+use version; our $VERSION = qv('0.0.5');
 
 # Other recommended modules (uncomment to use):
 #  use IO::Prompt;
@@ -30,6 +32,9 @@ sub new {
   my $ua = LWP::UserAgent->new( agent => 'SchoSpider v0.1' );
   $ua->cookie_jar(HTTP::Cookies->new(file => "$ENV{HOME}/.lwpcookies.txt",
 				     autosave => 1));
+  $ua->default_header(
+    'Accept-Language' => 'en-US',
+    'Accept-Charset' => 'utf-8');
   $options->{'_ua'} = $ua;
   my $tree= HTML::TreeBuilder::XPath->new;
   $options->{'_xpath'}=$tree;
@@ -39,27 +44,47 @@ sub new {
 sub _search {
   my $self = shift;
   my $query = shift || carp "No query!\n";
-  my $url = "http://scholar.google.com/scholar?$query";
+  my $url = "http://scholar.google.es/scholar?hl=en&$query";
   my $resp = $self->{'_ua'}->get($url);
   if ( $resp->is_success ) {
-    return  $resp->content;
+    my $content = $resp->decoded_content((charset => 'utf-8'));
+    return  $content;
   } else {
     carp "Problems searching : "+$resp->status_line ;
   }
 }
 
+sub search_generic {
+  binmode STDOUT, ":utf8";
+  my $self = shift;
+  my $generic = shift;
+  my $uri_generic = uri_escape($generic);
+  my $query = "num=".$self->{'num'}."&q=".$uri_generic;
+  my $result = $self->_search($query);
+  my $tree= HTML::TreeBuilder::XPath->new;
+  $tree->parse($result);
+  my @papers_html = $tree->findnodes( '/html/body//div[@class="gs_r"]');
+  my @papers;
+  for my $n (@papers_html ) {
+    push @papers, My::Google::Scholar::Paper->new( $n->as_XML_indented );
+  }
+  return \@papers;
+
+}
+
+
 sub search_author {
   my $self = shift;
   my $author = shift;
   my $uri_author = uri_escape("\"$author\"");
-  my $query = "num=".$self->{'num'}."&btnG=Buscar+en+Google+Acad%C3%A9mico&as_sauthors=$uri_author&as_subj=".$self->{'as_subj'};
+  my $query = "num=".$self->{'num'}."&as_q=&as_sauthors=".$uri_author."&as_subj=".$self->{'as_subj'};
   my $result = $self->_search($query);
-#  $self->{'_xpath'}->parse( $result );
-#  my $nb=$self->{'_xpath'}->findnodes( '/html/body//p[@class="g"]');
-  my @papers_html = ($result =~ /<p class=g>(.+?)   /gs);
+  my $tree= HTML::TreeBuilder::XPath->new;
+  $tree->parse($result);
+  my @papers_html = $tree->findnodes( '/html/body//div[@class="gs_r"]');
   my @papers;
   for my $n (@papers_html ) {
-    push @papers, My::Google::Scholar::Paper->new( $n );
+    push @papers, My::Google::Scholar::Paper->new( $n->as_XML_indented );
   }
   return \@papers;
 }
@@ -68,15 +93,14 @@ sub search_title {
   my $self = shift;
   my $title = shift;
   my $uri_title = uri_escape("\"$title\"");
-  my $query = "num=".$self->{'num'}."&btnG=Buscar+en+Google+Acad%C3%A9mico&as_epq=$uri_title&as_occt=title";
-  ($query .= "&as_subj=".$self->{'as_subj'}) if $self->{'as_subj'};
+  my $query = "num=".$self->{'num'}."&as_q=&as_epq=$uri_title&as_occt=title";
   my $result = $self->_search($query);
-#  $self->{'_xpath'}->parse( $result );
-#  my $nb=$self->{'_xpath'}->findnodes( '/html/body//p[@class="g"]');
-  my @papers_html = ($result =~ /<p class=g>(.+?)   /gs);
+  my $tree= HTML::TreeBuilder::XPath->new;
+  $tree->parse($result);
+  my @papers_html = $tree->findnodes( '/html/body//div[@class="gs_r"]');
   my @papers;
   for my $n (@papers_html ) {
-    push @papers, My::Google::Scholar::Paper->new( $n );
+    push @papers, My::Google::Scholar::Paper->new( $n->as_XML_indented );
   }
   return \@papers;
 }

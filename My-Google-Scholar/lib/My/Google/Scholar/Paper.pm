@@ -6,8 +6,10 @@ use Carp;
 
 #Specific classes
 use HTML::TreeBuilder::XPath;
+use utf8;
+use Encode;
 
-use version; our $VERSION = qv('0.0.3');
+use version; our $VERSION = qv('0.0.4');
 
 # Other recommended modules (uncomment to use):
 #  use IO::Prompt;
@@ -20,42 +22,130 @@ use version; our $VERSION = qv('0.0.3');
 sub new {
   my $class = shift;
   my $options = shift;
+
   my $paper;
-  if ( !ref $options ) { # Escalar: serÃ¡ texto 
+  if ( !ref $options ) { # Escalar 
     my $tree = HTML::TreeBuilder::XPath->new;
     $tree->parse($options);
-    my $titulo_entry = $tree->findvalue( '//h3[@class="r"]');
+    my $titulo_entry = $tree->findvalue( '//h3');
     my ($tipo, $titulo) = ( $titulo_entry =~ m{(\[\w+\])? ?(.+)}gs );
-    if ( !$titulo ) { #Alternative representation
-      ($tipo, $titulo) = ( $options =~ m{(\[\w+\])? .+</font>\&nbsp;([^-<]+)(-|<)}gs );
-    }
-    my $autores_pub =  $tree->findvalue( '//span[@class="a"]');
+
+    #REMOVE spaces in TITULO
+    ($titulo) = $titulo=~ /^\s*(\S.*)\s*$/g;
+    $titulo=~ s/\x{2026}/.../g;
+    chop($titulo);
+
+    #if ( !$titulo ) { #Alternative representation
+    #  ($tipo, $titulo) = ( $options =~ m{(\[\w+\])? .+</font>\&nbsp;([^-<]+)(-|<)}gs );
+    #}
+
+    my $autores_pub =  $tree->findvalue( '//span[@class="gs_a"]');
     my ($autores, $pub ) = ( $autores_pub =~ /([^-]+)\s*-?\s*(.*)/gs );
+
+    ($autores) = $autores=~ /^\s*(\S.*)\s*$/g;
+    $autores=~ s/\s*\x{2026}\s*//g;
+    chop($autores);
+    
     my ($cited_by) = ($options =~ /Cited by (\d*)/gs);
-    $paper = { _tipo => $tipo,
-	       _titulo => $titulo,
+    $paper = { _title => $titulo,
 	       _pub => $pub,
 	       _cited_by => $cited_by || 0 };
+
     if ( $autores =~ /,/ ) {
       my @autores = split(/,\s*/, $autores );
-      $paper->{_autores} = \@autores;
+      $paper->{_authors} = \@autores;
     } else {
-      $paper->{_autores} = [$autores];
+      $paper->{_authors} = [$autores];
     }
-  }
+
+    #Added way for adding PDF
+    if ($options=~/class\=\"gs_ggs gs_fl\"/) {
+    	my $pdf_exists =  $tree->findnodes( '//span[@class="gs_ggs gs_fl"]/b/a');
+    	if ($pdf_exists) {
+		my @list = $pdf_exists->get_nodelist();
+		foreach my $pdftext (@list) {
+			for (@{ $pdftext->extract_links() }) {
+				$paper->{_doc} = @{$_}[0];
+  			}
+		}
+		my $type_doc =  $tree->findvalue( '//span[@class="gs_ggs gs_fl"]/b/span[@class="gs_ctg"]');
+		$type_doc =~ s/\[//g;
+		$type_doc =~ s/\]//g;
+		$paper->{_typedoc} = $type_doc;	
+    	}
+    }
+
+    #Added way for links
+    my $link_exists =  $tree->findnodes( '//h3/a');
+    	if ($link_exists) {
+		my @list = $link_exists->get_nodelist();
+		foreach my $linktext (@list) {
+			for (@{ $linktext->extract_links() }) {
+				$paper->{_url} = @{$_}[0];
+  			}
+		}
+    	}
+
+    #Added way for type of ref
+    my $type =  $tree->findvalue( '//h3/span[@class="gs_ctc"]');
+    	if ($type) {
+		$type =~  s/\[//g;
+		$type =~ s/\]//g;
+		$paper->{_type} = $type;		
+    	}
+	else {
+		$type =  $tree->findvalue( '//h3/span[@class="gs_ctu"]');
+		if ($type) {
+			$type =~  s/\[//g;
+			$type =~ s/\]//g;
+			$paper->{_type} = $type;		
+    		}
+		else {$paper->{_type} = "ARTICLE";}
+
+	}
+   }
+  
   bless $paper, $class;
   return $paper;
 }
 
 sub title {
   my $self = shift;
-  return $self->{'_titulo' };
+  return $self->{'_title' };
 }
+
+sub type {
+  my $self = shift;
+  return $self->{'_type' };
+}
+
 
 sub cited_by {
   my $self = shift;
   return $self->{'_cited_by'};
 }
+
+sub authors {
+  my $self = shift;
+  return $self->{'_authors'};
+}
+
+sub doc {
+  my $self = shift;
+  return $self->{'_doc'};
+}
+
+sub typedoc {
+  my $self = shift;
+  return $self->{'_typedoc'};
+}
+
+sub url {
+  my $self = shift;
+  return $self->{'_url'};
+}
+
+
 "h=100!"; # Magic true value required at end of module
 __END__
 
