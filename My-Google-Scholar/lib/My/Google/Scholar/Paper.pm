@@ -9,7 +9,7 @@ use HTML::TreeBuilder::XPath;
 use utf8;
 use Encode;
 
-use version; our $VERSION = qv('0.0.4');
+use version; our $VERSION = qv('0.0.5');
 
 # Other recommended modules (uncomment to use):
 #  use IO::Prompt;
@@ -28,7 +28,7 @@ sub new {
     my $tree = HTML::TreeBuilder::XPath->new;
     $tree->parse($options);
     my $titulo_entry = $tree->findvalue( '//h3');
-    my ($tipo, $titulo) = ( $titulo_entry =~ m{(\[\w+\])? ?(.+)}gs );
+    my ($tipo, $titulo) = ( $titulo_entry =~ m{(\[\w+\])? ?(.+)}gs );
 
     #REMOVE spaces in TITULO
     ($titulo) = $titulo=~ /^\s*(\S.*)\s*$/g;
@@ -36,10 +36,13 @@ sub new {
     chop($titulo);
 
     #if ( !$titulo ) { #Alternative representation
-    #  ($tipo, $titulo) = ( $options =~ m{(\[\w+\])? .+</font>\&nbsp;([^-<]+)(-|<)}gs );
+    #  ($tipo, $titulo) = ( $options =~ m{(\[\w+\])? .+</font>\&nbsp;([^-<]+)(-|<)}gs );
     #}
 
-    my $autores_pub =  $tree->findvalue( '//span[@class="gs_a"]');
+    ### changed: <span> class doesn't work. Replaced with <div>
+    #my $autores_pub =  $tree->findvalue( '//span[@class="gs_a"]');
+    my $autores_pub =  $tree->findvalue( '//div[@class="gs_a"]');
+    
     my ($autores, $pub ) = ( $autores_pub =~ /([^-]+)\s*-?\s*(.*)/gs );
 
     ($autores) = $autores=~ /^\s*(\S.*)\s*$/g;
