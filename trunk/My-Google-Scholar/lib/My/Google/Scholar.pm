@@ -15,7 +15,7 @@ use HTTP::Cookies;
 use utf8;
 use Encode;
 
-use version; our $VERSION = qv('0.0.5');
+use version; our $VERSION = qv('0.0.6');
 
 # Other recommended modules (uncomment to use):
 #  use IO::Prompt;
@@ -88,6 +88,78 @@ sub search_author {
   }
   return \@papers;
 }
+
+### New routine to search author's papers starting at a specified year
+#example:
+# $papersGoogle = $scholar->search_author_starty( @GOOGLEauthors, $opt{startyear} );
+#
+sub search_author_starty {
+  my $self = shift;
+  my $author = shift;
+  my $syear  = shift;
+  my $uri_author = uri_escape("\"$author\"");
+
+  my $query = "num=".$self->{'num'}."&as_q=&as_sauthors=".$uri_author."&as_ylo=".$syear."&as_subj=".$self->{'as_subj'};
+
+  my $result = $self->_search($query);
+  my $tree= HTML::TreeBuilder::XPath->new;
+  $tree->parse($result);
+  my @papers_html = $tree->findnodes( '/html/body//div[@class="gs_r"]');
+  my @papers;
+  for my $n (@papers_html ) {
+    push @papers, scholar::Paper->new( $n->as_XML_indented );
+  }
+  return \@papers;
+}
+
+### New routine to search author's papers ending at a specified year
+# Example:
+# $papersGoogle = $scholar->search_author_endy( @GOOGLEauthors, $opt{endyear} );
+#
+sub search_author_endy {
+  my $self = shift;
+  my $author = shift;
+  my $eyear  = shift;
+  my $uri_author = uri_escape("\"$author\"");
+
+  my $query = "num=".$self->{'num'}."&as_q=&as_sauthors=".$uri_author."&as_yhi=".$eyear."&as_subj=".$self->{'as_subj'};
+
+  my $result = $self->_search($query);
+  my $tree= HTML::TreeBuilder::XPath->new;
+  $tree->parse($result);
+  my @papers_html = $tree->findnodes( '/html/body//div[@class="gs_r"]');
+  my @papers;
+  for my $n (@papers_html ) {
+    push @papers, scholar::Paper->new( $n->as_XML_indented );
+  }
+  return \@papers;
+}
+
+### New routine to search author's papers in a specified year range
+# Example:
+# $papersGoogle = $scholar->search_author_rangey( @GOOGLEauthors, $opt{startyear}, $opt{endyear} );
+#
+sub search_author_rangey {
+  my $self = shift;
+  my $author = shift;
+  my $syear  = shift;
+  my $eyear  = shift;
+  my $uri_author = uri_escape("\"$author\"");
+
+  my $query = "num=".$self->{'num'}."&as_q=&as_sauthors=".$uri_author."&as_ylo=".$syear."&as_yhi=".$eyear."&as_subj=".$self->{'as_subj'};
+
+  my $result = $self->_search($query);
+  my $tree= HTML::TreeBuilder::XPath->new;
+  $tree->parse($result);
+  my @papers_html = $tree->findnodes( '/html/body//div[@class="gs_r"]');
+  my @papers;
+  for my $n (@papers_html ) {
+    push @papers, scholar::Paper->new( $n->as_XML_indented );
+  }
+  return \@papers;
+}
+
+
 
 sub search_title {
   my $self = shift;
