@@ -1,5 +1,9 @@
 My-Google-Scholar version 0.0.1
 
+These files came from http://code.google.com/p/google-scholar-perl/ 
+(a GS scraper module for perl)
+
+The rest of this text is verbatim original
 [ REPLACE THIS...
 
   The README is used to introduce the module and provide instructions on
